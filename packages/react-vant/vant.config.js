@@ -4,7 +4,7 @@ module.exports = {
   build: { css: { preprocessor: 'less' }, site: { publicPath: './' } },
   site: {
     defaultLang: 'zh-CN',
-    versions: [{ label: 'v2', link: 'https://3lang3.github.io/react-vant' }],
+    versions: [{ label: 'v2', link: 'https://react-vant.3lang.dev' }],
     locales: {
       'zh-CN': {
         title: 'React Vant',

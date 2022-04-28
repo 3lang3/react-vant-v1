@@ -1,0 +1,53 @@
+{
+  "name": "react-vant",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3lang3/react-vant.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna exec --scope react-vant yarn build",
+    "build:cli": "lerna exec --scope @react-vant/cli yarn build",
+    "build:fabric": "lerna exec --scope @react-vant/fabric yarn build",
+    "build:site": "lerna exec --scope react-vant yarn build:site",
+    "changelog": "lerna exec --scope react-vant yarn changelog",
+    "clean": "lerna clean -y",
+    "create-component": "lerna exec --scope react-vant yarn create-component",
+    "prepare": "yarn build:cli && yarn build:fabric",
+    "publish": "lerna publish",
+    "release:site": "lerna exec --scope react-vant yarn release:site",
+    "start": "lerna exec --scope react-vant yarn start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "react-vant-cli commit-lint"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,less}": "prettier --write",
+    "*.{ts,tsx,js}": "eslint --fix",
+    "*.{css,less}": "stylelint --fix",
+    "package.json": "yarn sort-package-json"
+  },
+  "dependencies": {
+    "@react-vant/cli": "^1.1.5"
+  },
+  "devDependencies": {
+    "@react-vant/fabric": "^1.0.0",
+    "all-contributors-cli": "^6.20.0",
+    "eslint": "7.32.0",
+    "husky": "4.3.8",
+    "lerna": "4.0.0",
+    "lerna-changelog": "2.2.0",
+    "lint-staged": "12.0.2",
+    "prettier": "2.4.1",
+    "pretty-quick": "3.1.1",
+    "sort-package-json": "1.53.1",
+    "stylelint": "13.13.1"
+  }
+}

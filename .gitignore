@@ -1,0 +1,27 @@
+*.log*
+.cache
+.DS_Store
+.idea
+.eslintcache
+.now
+.env
+.env.*
+
+# npm
+node_modules
+package-error.json
+yarn-error.json
+pnpm-lock.yaml
+
+# dist file
+es
+lib
+packages/react-vant/site
+dist
+changelog.generated.md
+
+# log file
+.changelog
+
+# tests
+tests/coverage

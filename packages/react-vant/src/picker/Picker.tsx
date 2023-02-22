@@ -142,7 +142,7 @@ const Picker = forwardRef<PickerInstance, PickerProps>((props, ref) => {
   // get column value by index
   const getColumnValue = (index: number) => {
     const column = getChild(index);
-    return column.getValue();
+    return column?.getValue();
   };
 
   // set column value by index
@@ -161,13 +161,13 @@ const Picker = forwardRef<PickerInstance, PickerProps>((props, ref) => {
   // get column option index by column index
   const getColumnIndex = (index: number) => {
     const column = getChild(index);
-    return column.state.index;
+    if (column) return column.state.index;
+    return 0;
   };
 
   // set column option index by column index
   const setColumnIndex = (columnIndex: number, optionIndex: number) => {
     const column = getChild(columnIndex);
-
     if (column) {
       column.setIndex(optionIndex);
       if (dataType === 'cascade') {

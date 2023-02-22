@@ -23,7 +23,7 @@ export default (): React.ReactNode => {
       <DemoBlock card title="基础用法">
         <Picker
           title="标题"
-          columns={[]}
+          columns={columns}
           onChange={(value: string, index: number) => Toast(`当前值：${value}, 当前索引：${index}`)}
           onCancel={() => Toast.info('点击取消按钮')}
           onConfirm={() => Toast.info('点击确认按钮')}
